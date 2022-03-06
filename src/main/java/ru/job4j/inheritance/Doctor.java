@@ -12,11 +12,6 @@ public class Doctor extends Profession {
         this.hospital = hospital;
     }
 
-    public Doctor(String hospital) {
-        super();
-        this.hospital = hospital;
-    }
-
     public String getHospital() {
         return hospital;
     }

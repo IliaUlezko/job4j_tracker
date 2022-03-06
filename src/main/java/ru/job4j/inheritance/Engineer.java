@@ -12,11 +12,6 @@ public class Engineer extends Profession {
         this.company = company;
     }
 
-    public Engineer(String company) {
-        super();
-        this.company = company;
-    }
-
     public String getCompany() {
         return company;
     }
