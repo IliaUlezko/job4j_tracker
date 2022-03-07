@@ -17,7 +17,6 @@ public class Shop {
         products[1] = new Product("Bread", 4);
         products[2] = new Product("Egg", 19);
         for (Product product : products) {
-            /* проверяем, что объект не равен null. Т.к. у нас массив не заполнен целиком. */
             if (product != null) {
                 System.out.println(product.getName());
             }
