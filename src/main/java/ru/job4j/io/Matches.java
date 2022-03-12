@@ -23,9 +23,11 @@ public class Matches {
                     default -> "спичек";
                 };
                 System.out.println("Осталось " + count + " " + report + ".Ход следующего игрока.");
-            } else {
-                System.out.println("Error!");
+            } else if (count == matches) {
+                System.out.println("Игра закончена!");
                 break;
+            } else {
+                System.out.println("Ошибка!");
             }
         }
         if (!turn) {
