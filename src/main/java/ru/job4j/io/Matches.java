@@ -13,9 +13,9 @@ public class Matches {
             String player = turn ? "Первый игрок" : "Второй игрок";
             System.out.println(player + " введите число от 1 до 3:");
             int matches = Integer.parseInt(input.nextLine());
-            turn = !turn;
             boolean check = (matches > 0 && matches < 4) && matches < count;
             if (check) {
+                turn = !turn;
                 count -= matches;
                 String report = switch (count) {
                     case 1 -> "спичка";
