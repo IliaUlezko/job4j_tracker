@@ -3,9 +3,15 @@ package ru.job4j.tracker.useractions;
 import ru.job4j.tracker.Input;
 import ru.job4j.tracker.Item;
 import ru.job4j.tracker.Tracker;
-import ru.job4j.tracker.useractions.UserAction;
+import ru.job4j.tracker.output.Output;
 
 public class EditAction implements UserAction {
+    private final Output out;
+
+    public EditAction(Output out) {
+        this.out = out;
+    }
+
     @Override
     public String name() {
         return "Edit item";
@@ -13,14 +19,14 @@ public class EditAction implements UserAction {
 
     @Override
     public boolean execute(Input input, Tracker tracker) {
-        System.out.println("=== Edit item ===");
+        out.println("=== Edit item ===");
         int id = input.askInt("Enter id: ");
         String name = input.askStr("Enter name: ");
         Item item = new Item(name);
         if (tracker.replace(id, item)) {
-            System.out.println("Заявка успешно изменена.");
+            out.println("Заявка успешно изменена.");
         } else {
-            System.out.println("Ошибка замены заявки.");
+            out.println("Ошибка замены заявки.");
         }
         return true;
     }
