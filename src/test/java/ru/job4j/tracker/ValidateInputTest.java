@@ -5,7 +5,7 @@ import ru.job4j.tracker.output.*;
 import org.junit.Test;
 
 import static org.hamcrest.Matchers.is;
-import static org.junit.Assert.assertThat;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 public class ValidateInputTest {
 
@@ -35,11 +35,15 @@ public class ValidateInputTest {
     public void whenMultipleValidInput() {
         Output out = new StubOutput();
         Input in = new StubInput(
-                new String[] {"1", "1", "1"}
+                new String[] {"1", "2", "3"}
         );
         ValidateInput input = new ValidateInput(out, in);
         int selected = input.askInt("Enter menu:");
         assertThat(selected, is(1));
+        int selected1 = input.askInt("Enter menu:");
+        assertThat(selected1, is(2));
+        int selected2 = input.askInt("Enter menu:");
+        assertThat(selected2, is(3));
     }
 
     @Test
