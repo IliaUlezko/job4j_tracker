@@ -26,4 +26,23 @@ public class NotifyAccountTest {
         );
         assertThat(NotifyAccount.sent(accounts), is(expect));
     }
+
+    @Test
+    public void whenDuplicate() {
+        List<Account> accounts = Arrays.asList(
+                new Account("123", "Petr Arsentev", "eDer3432f"),
+                new Account("123", "Ivan Ivanov", "eDer34"),
+                new Account("321", "Victor Petrov", "eDer32f"),
+                new Account("321", "Vasiliy Fedorov", "eDr3432f"),
+                new Account("142", "Maria Snegova", "000001")
+        );
+        HashSet<Account> expect = new HashSet<>(
+                Arrays.asList(
+                        new Account("123", "Petr Arsentev", "eDer3432f"),
+                        new Account("321", "Victor Petrov", "eDer32f"),
+                        new Account("142", "Maria Snegova", "000001")
+                )
+        );
+        assertThat(NotifyAccount.sent(accounts), is(expect));
+    }
 }
