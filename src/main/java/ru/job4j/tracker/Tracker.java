@@ -7,6 +7,18 @@ public class Tracker {
     private final List<Item> items = new ArrayList<>();
     private int ids = 1;
 
+    public int indexOf(int id) {
+        int rsl = -1;
+        for (int index = 0; index < items.size(); index++) {
+            int index1 = items.get(index).getId();
+            if (index1 == id) {
+                rsl = index;
+                break;
+            }
+        }
+        return rsl;
+    }
+
     public Item add(Item item) {
         item.setId(ids++);
         items.add(item);
@@ -38,18 +50,6 @@ public class Tracker {
         if (rsl) {
             item.setId(id);
             items.set(index, item);
-        }
-        return rsl;
-    }
-
-    public int indexOf(int id) {
-        int rsl = -1;
-        for (int index = 0; index < items.size(); index++) {
-            int index1 = items.get(index).getId();
-            if (index1 == id) {
-                rsl = index;
-                break;
-            }
         }
         return rsl;
     }
