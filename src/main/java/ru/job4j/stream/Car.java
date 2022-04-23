@@ -13,17 +13,6 @@ public class Car {
 
     private String color;
 
-    @Override
-    public String toString() {
-        return "Car{"
-                + "brand='" + brand + '\''
-                + ", model='" + model + '\''
-                + ", created=" + created
-                + ", volume=" + volume
-                + ", color='" + color + '\''
-                + '}';
-    }
-
     static class Builder {
         private String brand;
         private String model;
@@ -64,6 +53,17 @@ public class Car {
             car.volume = volume;
             car.color = color;
             return car;
+        }
+
+        @Override
+        public String toString() {
+            return "Car{"
+                    + "brand='" + brand + '\''
+                    + ", model='" + model + '\''
+                    + ", created=" + created
+                    + ", volume=" + volume
+                    + ", color='" + color + '\''
+                    + '}';
         }
     }
 
