@@ -1,0 +1,19 @@
+package ru.job4j.stream;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class FilterNegativeNumbers {
+
+    public static void main(String[] args) {
+        List<Integer> numbers = Arrays.asList(1, 0, -4, 5, 15, -3, 22, -99, -1);
+        List<Integer> positive = numbers.stream().filter(number -> number > 0
+        ).collect(Collectors.toList());
+        List<Integer> negative = numbers.stream().filter(number -> number < 0
+        ).sorted().collect(Collectors.toList());
+        positive.forEach(System.out::println);
+        System.out.println("************");
+        negative.forEach(System.out::println);
+    }
+}
