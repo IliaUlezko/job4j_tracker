@@ -19,7 +19,7 @@ public class StartUITest {
         Input in = new StubInput(list);
         Tracker tracker = new Tracker();
         List<UserAction> actions = List.of(
-                new ExitAction(out)
+                new Exit(out)
         );
         new StartUI(out).init(in, tracker, actions);
         assertThat(out.toString(), is(
@@ -37,8 +37,8 @@ public class StartUITest {
         List<String> list = List.of("0", String.valueOf(one.getId()), replaceName, "1");
         Input in = new StubInput(list);
         List<UserAction> actions = List.of(
-                new EditAction(out),
-                new ExitAction(out)
+                new Edit(out),
+                new Exit(out)
         );
         new StartUI(out).init(in, tracker, actions);
         String ln = System.lineSeparator();
@@ -62,8 +62,8 @@ public class StartUITest {
         List<String> list = List.of("0", "1");
         Input in = new StubInput(list);
         List<UserAction> actions = List.of(
-                new ShowAllAction(out),
-                new ExitAction(out)
+                new ShowAll(out),
+                new Exit(out)
         );
         new StartUI(out).init(in, tracker, actions);
         String ln = System.lineSeparator();
@@ -87,8 +87,8 @@ public class StartUITest {
         List<String> list = List.of("0", String.valueOf(one.getName()), "1");
         Input in = new StubInput(list);
         List<UserAction> actions = List.of(
-                new FindByNameAction(out),
-                new ExitAction(out)
+                new FindByName(out),
+                new Exit(out)
         );
         new StartUI(out).init(in, tracker, actions);
         String ln = System.lineSeparator();
@@ -112,8 +112,8 @@ public class StartUITest {
         List<String> list = List.of("0", String.valueOf(one.getId()), "1");
         Input in = new StubInput(list);
         List<UserAction> actions = List.of(
-                new FindByIdAction(out),
-                new ExitAction(out)
+                new FindById(out),
+                new Exit(out)
         );
         new StartUI(out).init(in, tracker, actions);
         String ln = System.lineSeparator();
@@ -135,7 +135,7 @@ public class StartUITest {
         List<String> list = List.of("5", "0");
         Input in = new StubInput(list);
         Tracker tracker = new Tracker();
-        List<UserAction> actions = List.of(new ExitAction(out));
+        List<UserAction> actions = List.of(new Exit(out));
         new StartUI(out).init(in, tracker, actions);
         String ln = System.lineSeparator();
         assertThat(out.toString(), is(

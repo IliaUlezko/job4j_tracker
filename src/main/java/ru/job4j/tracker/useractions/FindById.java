@@ -5,10 +5,10 @@ import ru.job4j.tracker.Item;
 import ru.job4j.tracker.Tracker;
 import ru.job4j.tracker.output.Output;
 
-public class FindByIdAction implements UserAction {
+public class FindById implements UserAction {
     private final Output out;
 
-    public FindByIdAction(Output out) {
+    public FindById(Output out) {
         this.out = out;
     }
 

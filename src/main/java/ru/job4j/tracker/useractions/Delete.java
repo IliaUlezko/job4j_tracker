@@ -4,10 +4,10 @@ import ru.job4j.tracker.Input;
 import ru.job4j.tracker.Tracker;
 import ru.job4j.tracker.output.*;
 
-public class DeleteAction implements UserAction {
+public class Delete implements UserAction {
     private final Output out;
 
-    public DeleteAction(Output out) {
+    public Delete(Output out) {
         this.out = out;
     }
 
