@@ -8,8 +8,11 @@ public class AnalyzeByMap {
         for (Pupil pupil : pupils) {
             List<Subject> subjects = pupil.subject();
             for (Subject subject : subjects) {
-                int temp = map.getOrDefault(subject.name(), 0);
-                map.put(subject.name(), subject.score() + temp);
+                map.merge(
+                        subject.name(),
+                        subject.score(),
+                        (oldValue, newValue) -> oldValue + subject.score()
+                );
             }
         }
         return map;
